@@ -31,7 +31,7 @@ also if it gives error try pulling the base image define in your DockerFile
 
 
 Installation:
-git clone https://github.com/yourusername/chat-app.git
+git clone https://github.com/mobashirahmad2000/Flask_Chat_App.git
 cd chat-app
 python -m venv venv
 source venv/bin/activate  # On Windows, use: venv\Scripts\activate
