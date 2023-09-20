@@ -7,9 +7,9 @@ Creation of unique chat rooms.
 Real-time messaging using Socket.IO.
 Message history for each chat room.
 Joining and leaving chat rooms.
+
 Getting Started
 Prerequisites:
-
 Python 3.7+
 MongoDB database 
 start from pulling the docker image
