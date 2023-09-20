@@ -1,0 +1,7 @@
+Flask==2.0.0
+Flask-MongoEngine==1.0.0
+Flask-SocketIO
+Werkzeug
+pymongo
+gunicorn
+
