@@ -11,10 +11,26 @@ Getting Started
 Prerequisites:
 
 Python 3.7+
-MongoDB database (configured as per the provided settings)
-Flask and Flask extensions (Flask-MongoEngine, Flask-SocketIO)
-Installation:
+MongoDB database 
+start from pulling the docker image
+docker pull mongo:4.4
+up the container by following command
+docker run -d --network=my_network --name mongodb-container -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin_password -e MONGO_INITDB_DATABASE=chat_app_db -p 27017:27017 mongo:4.4
 
+
+You need to create docker network to make the link between the flask app and mongodb 
+docker network create chatapp_network
+
+Flask and Flask extensions (Flask-MongoEngine, Flask-SocketIO)
+there is a docker file you can build the image by this command 
+docker build -t my-flask-app .
+To build the container
+docker run -d --network=my_network --name flask-app-container -p 5000:5000 my-flask-app
+
+also if it gives error try pulling the base image define in your DockerFile
+
+
+Installation:
 git clone https://github.com/yourusername/chat-app.git
 cd chat-app
 python -m venv venv
@@ -23,8 +39,8 @@ pip install -r requirements.txt
 Usage:
 
 To Start the Flask application:
-python app.py
-Access the application at http://localhost:5000.
+python main.py
+or up the docker container
 
 Register, log in, and start chatting in real-time!
 API Endpoints
